@@ -1,7 +1,7 @@
 # Raw data
 ## Getting the data
 The data can be downloaded from the following link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-
+## About the data
 This data set contains Human Activity Recognition data built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
 
 [The following sections on Raw Data were extracted directly from the original authors website (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones), except for Variables that was extracted from the original authors' features_info.txt file]
