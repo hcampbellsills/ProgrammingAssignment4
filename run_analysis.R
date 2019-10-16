@@ -1,11 +1,16 @@
-setwd("Documents/DataScience/3.Data/assignment/")
+setwd("~/Documents/DataScience/3.Data/assignment/")
 library(dplyr)
 library(tidyr)
 
-# Download file if not present
+# Download file if not present and unzip it
 file_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 file_name <- "dataset.zip"
-if (!file.exists(file)) { download.file(file_url,file_name) }
+file_folder <- "UCI HAR Dataset"
+if (!file.exists(file_name) & !file.exists(file_folder)) { 
+  download.file(file_url,file_name) 
+  unzip(file_name)
+  file.remove(file_name)
+  }
 
 # Define function for reading lines from text file
 read.file <- function(filename) {
@@ -52,5 +57,4 @@ data_all <- cbind(subj_all,act_all,x_all)
 names(data_all)[1:2] <- c("subject","activity")
 
 dataset <- as_tibble(data_all)
-dataset <- group_by(dataset,subject,activity)
-datasum <- dataset %>% summarise_all(mean)
+datasum <- dataset %>% group_by(subject,activity) %>% summarise_all(mean)
