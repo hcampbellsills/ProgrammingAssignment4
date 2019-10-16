@@ -14,6 +14,7 @@ file_folder <- "UCI HAR Dataset"
 if (!file.exists(file_folder)) {
   if (!file.exists(file_name)) { download.file(file_url,file_name) }
   unzip(file_name)
+  file.remove(file_name)
   }
 
 # Define function for reading lines from text file
