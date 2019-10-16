@@ -68,9 +68,14 @@ tBodyGyroJerkMean
 
 The complete list of variables of each feature vector is available in 'features.txt'
 # Clean data
-## Loading into R
-After unzipping the downloaded file, the data can be found in the folder *UCI HAR Dataset/*. The data that was loaded into R was:
-* features.txt: contains the names of the variables that were measured.
+## Loading data into R
+After unzipping the downloaded file, the data can be found in the folder *UCI HAR Dataset/*. The following data was loaded into R:
+* activity_labels.txt: contains the descriptive labels of the activities carried out by the volunteers.
+* /train/y_train.txt: contains the training set of the series of activities carried out throughout the experiment.
+* /test/y_test.txt: contains the testing set of the series of activities carried out throughout the experiment.
+* /train/subject_train.txt: contains the labels of the subjects carring out the activities for all the observations of the training data set.
+* /test/subject_test.txt: contains the labels of the subjects carring out the activities for all the observations of the testing data set.
 * train/X_train.txt: contains the observations of the data for training.
 * test/X_test.txt: contains the observations of the data for testing.
+* features.txt: contains the descriptive names of the variables that were measured.
 # Transforming the data
