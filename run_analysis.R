@@ -74,4 +74,4 @@ dataset <- as_tibble(data_all)
 datasum <- dataset %>% group_by(subject,activity) %>% summarise_all(mean)
 
 # Write output
-write.table()
+write.table(datasum,"analysis_output.csv",sep=";")
