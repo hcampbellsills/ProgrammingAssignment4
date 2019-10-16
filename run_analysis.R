@@ -11,8 +11,8 @@ library(tidyr)
 file_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 file_name <- "dataset.zip"
 file_folder <- "UCI HAR Dataset"
-if (!file.exists(file_name) & !file.exists(file_folder)) { 
-  download.file(file_url,file_name) 
+if (!file.exists(file_folder)) {
+  if (!file.exists(file_name)) { download.file(file_url,file_name) }
   unzip(file_name)
   }
 
