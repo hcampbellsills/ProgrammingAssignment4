@@ -99,3 +99,8 @@ After unzipping the downloaded file, the data can be found in the folder *UCI HA
 1. Only the columns containing the mean and standard deviation of each measurement are selected.
 1. The descriptive labels for each activity are matched to the observed activities of the data set.
 1. The data is grouped by subject and by activity, and the mean is summarised for each group.
+## Final output
+A table of 180 observations (30 subjects x 6 activities each) and 68 columns:
+* Column 1: subject.
+* Column 2: activity.
+* Columns 3-68: the mean of the observations for each of the selected measurements.
