@@ -10,7 +10,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 Check the README.txt file for further details about this dataset. 
 ## Variables
-### [Extracted from the original authors features_info.txt file]
+### [Extracted from the original authors' features_info.txt file]
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
@@ -73,9 +73,14 @@ After unzipping the downloaded file, the data can be found in the folder *UCI HA
 * activity_labels.txt: contains the descriptive labels of the activities carried out by the volunteers.
 * /train/y_train.txt: contains the training set of the series of activities carried out throughout the experiment.
 * /test/y_test.txt: contains the testing set of the series of activities carried out throughout the experiment.
+* features.txt: contains the descriptive names of the variables that were measured.
 * /train/subject_train.txt: contains the labels of the subjects carring out the activities for all the observations of the training data set.
 * /test/subject_test.txt: contains the labels of the subjects carring out the activities for all the observations of the testing data set.
 * train/X_train.txt: contains the observations of the data for training.
 * test/X_test.txt: contains the observations of the data for testing.
-* features.txt: contains the descriptive names of the variables that were measured.
-# Transforming the data
+# Transforming the data.
+1. The activity data (y_train.txt and y_test.txt) are merged.
+1. The activity labels (activity_labels.txt) are assigned to the variable names of the merged activity data.
+1. Only the columns containing the mean and standard deviation of each measurement are selected.
+1. The descriptive labels for each activity are matched to the observed activities of the data set.
+1. The data is grouped by subject and by activity, and the mean is summarised for each group.
