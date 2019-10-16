@@ -1,4 +1,4 @@
-setwd("~/Documents/DataScience/3.Data/assignment/")
+# Loading required packages
 library(dplyr)
 library(tidyr)
 
@@ -72,3 +72,6 @@ names(data_all)[1:2] <- c("subject","activity")
 # and each subject
 dataset <- as_tibble(data_all)
 datasum <- dataset %>% group_by(subject,activity) %>% summarise_all(mean)
+
+# Write output
+write.table()
