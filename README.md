@@ -12,8 +12,15 @@ The script run_analysis.R has to be placed in the same root folder as *UCI HAR D
 ## Details on how the script works
 Check directly into the script's code for the comments on each step.
 
-# Output
-An analysis_output.csv file with the ";" field separator containing the means for each group of observations (subject x activity). The file is structured as follows:
-* Column 1: subject.
-* Column 2: activity.
-* Columns 3-n: the mean of the observations for each group (subject x activity).
+# Output files
+/!\ Note: an output directory with an example of data generated with this script is providen in the repository.
+
+After running the script, the following files are generated:
+* output/Inertial Signals/*.txt: one merged file for the train and test sets for each of the files contained in the *Inertial Signals* folder.
+* output/X.txt: one merged file for the X_train.txt and X_test.txt files.
+* output/subject.txt: one merged file for the subject_train.txt and subject_test.txt files.
+* output/y.txt: one merged files for the y_train.txt and y_test.txt files.
+* output/summarised_data.csv: a csv file using the ";" field separator and containing the means for each group of observations (subject x activity). The file is structured as follows:
+    * Column 1: subject.
+    * Column 2: activity.
+    * Columns 3-n: the mean of the observations for each group (subject x activity).
