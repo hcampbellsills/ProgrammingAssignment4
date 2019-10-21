@@ -91,9 +91,7 @@ The complete list of variables of each feature vector is available in 'features.
 
 # Output : Clean Data
 
-## Loading Raw Data into R
-
-## Loading Pre-processed data into R
+## Loading Raw data into R
 After unzipping the downloaded file, the data can be found in the folder *UCI HAR Dataset/*. The following data was loaded into R:
 * activity_labels.txt: contains the descriptive labels of the activities carried out by the volunteers.
 * /train/y_train.txt: contains the training set of the series of activities carried out throughout the experiment.
@@ -105,6 +103,7 @@ After unzipping the downloaded file, the data can be found in the folder *UCI HA
 * test/X_test.txt: contains the observations of the data for testing.
 
 ## Transforming the Data
+The function merge.datasets scans a folder with files and creates an output folder that mimics the original data folder, but without any reference to the train and test sets. The following steps are taken into consideration:
 1. The activity data (y_train.txt and y_test.txt) are merged.
 1. The activity labels (activity_labels.txt) are assigned to the variable names of the merged activity data.
 1. Only the columns containing the mean and standard deviation of each measurement are selected.
@@ -113,22 +112,19 @@ After unzipping the downloaded file, the data can be found in the folder *UCI HA
 
 ## Cleaning the data
 
-### Merged Data
-The function merge.datasets scans a folder with files and creates an output folder that mimics the original data folder, but without any reference to the train and test sets.
-
 ### Summary
 A table of 180 observations (30 subjects x 6 activities each) and 68 measurements are sumarised:
 * Column 1: subject.
 * Column 2: activity.
 * Columns 3-68: the mean of the observations for each group (subject x activity).
 
-## Writing the Data to Files
+## Writing the Merged Data to Files
 The following files are generated:
 * output/Inertial Signals/*.txt: one merged file for the train and test sets for each of the files contained in the *Inertial Signals* folder.
 * output/X.txt: one merged file for the X_train.txt and X_test.txt files.
 * output/subject.txt: one merged file for the subject_train.txt and subject_test.txt files.
 * output/y.txt: one merged files for the y_train.txt and y_test.txt files.
-* output/summarised_data.csv: a csv file using the ";" field separator and containing the means for each group of observations (subject x activity). The file is structured as follows:
+* output/summarised_data.txt: a table using the " " field separator and containing the means for each group of observations (subject x activity). The file is structured as follows:
     * Column 1: subject.
     * Column 2: activity.
     * Columns 3-n: the mean of the observations for each group (subject x activity).
