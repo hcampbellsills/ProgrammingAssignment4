@@ -108,4 +108,5 @@ datasum <- dataset %>% group_by(subject,activity) %>% summarise_all(mean)
 
 # Write summarised output
 if (!dir.exists("output")) { dir.create("output") }
-write.table(datasum,"output/summarised_data.csv",sep=";")
+write.table(datasum,"output/summarised_data.txt",row.name=FALSE)
+
